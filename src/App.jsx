@@ -1,9 +1,9 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from './hooks';
-import { TextForm } from './components/Form';
-import { TodoList } from './components/List';
-import { Header } from './components/Header';
+import TextForm from './components/TextForm';
+import TodoList from './components/TodoList';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
@@ -17,7 +17,6 @@ function App() {
 				key: uuidv4(),
 				text: value,
 				completed: false,
-				order: tasks.length,
 			},
 		]);
 	}
@@ -38,7 +37,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Header title="To Do List" />
+			<Header title="Todo List" />
 			<TextForm onSubmit={handleItemSubmit} />
 			<TodoList
 				tasks={tasks}

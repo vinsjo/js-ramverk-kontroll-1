@@ -1,8 +1,9 @@
 .header {
 	width: 100%;
+	padding: 1rem 0;
 }
 
 .header .title {
 	text-align: center;
-	font-weight: 500;
+	font-weight: 800;
 }

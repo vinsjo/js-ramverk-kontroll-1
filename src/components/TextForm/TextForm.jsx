@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '../Buttons';
+import Button from '../Button';
 import styles from './TextForm.module.css';
 
 function TextForm({ onSubmit }) {

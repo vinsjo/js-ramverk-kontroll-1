@@ -1,5 +1,5 @@
 :root {
-	--main-font: 'Rubik', sans-serif;
+	--main-font: 'Signika Negative', sans-serif;
 	--mono-font: 'IBM Plex Mono', monospace;
 }
 * {
@@ -19,5 +19,5 @@ body {
 
 body {
 	font-family: var(--main-font);
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgb(230, 230, 230);
 }

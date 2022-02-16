@@ -1,0 +1,60 @@
+:root {
+	--color-complete: rgb(0, 130, 9);
+	--color-delete: rgb(240, 50, 25);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	position: relative;
+	z-index: 5;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid black;
+	background: transparent;
+	width: 2.5em;
+	height: 2.5em;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.icon {
+	fill: black;
+	height: 100%;
+	width: auto;
+}
+
+.complete:not(.checked) .icon {
+	opacity: 0;
+}
+
+.button,
+.icon {
+	transition-property: opacity, border-color, fill;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+@media (hover: hover) {
+	.complete:hover .icon {
+		opacity: 1;
+	}
+	.delete:hover {
+		border-color: var(--color-delete);
+	}
+	.delete:hover .icon {
+		fill: var(--color-delete);
+	}
+	.complete:hover {
+		border-color: var(--color-complete);
+	}
+	.complete:hover .icon {
+		fill: var(--color-complete);
+	}
+}

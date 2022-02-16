@@ -18,7 +18,6 @@
 
 .form button {
 	border-radius: 0 var(--ui-border-radius) var(--ui-border-radius) 0;
-	font-weight: 500;
 }
 
 .input {
