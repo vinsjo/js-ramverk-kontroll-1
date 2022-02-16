@@ -1,0 +1,37 @@
+.form {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: 1fr;
+	justify-items: center;
+	align-items: center;
+}
+
+.form button,
+.form .input {
+	display: block;
+	height: 3rem;
+	width: 100%;
+	padding: 0.5rem 1rem;
+	font-size: 1.2rem;
+}
+
+.form button {
+	border-radius: 0 var(--ui-border-radius) var(--ui-border-radius) 0;
+	font-weight: 500;
+}
+
+.input {
+	font-family: var(--mono-font);
+	border: 1px solid var(--ui-border);
+	background: var(--ui-bg);
+	transition: var(--ui-transition);
+	border-radius: var(--ui-border-radius) 0 0 var(--ui-border-radius);
+	border-right: none;
+	/* padding: 0.5em 1em; */
+	outline: none;
+}
+
+.input:focus {
+	background: var(--ui-bg-active);
+}

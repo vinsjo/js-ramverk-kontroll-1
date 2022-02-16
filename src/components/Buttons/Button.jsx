@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '../utils';
+import { classNames } from '../../utils';
 import { isFn } from 'x-is-type';
 import styles from './Button.module.css';
 
@@ -20,7 +20,7 @@ function Button({
 			type={type}
 			value={value}
 			title={title || ''}
-			onClick={e => isFn(onClick) && onClick(e)}
+			onClick={() => isFn(onClick) && onClick(value)}
 		>
 			{children}
 		</button>

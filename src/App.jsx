@@ -1,33 +1,31 @@
 import useLocalStorage from './hooks/useLocalStorage';
 import { v4 as uuidv4 } from 'uuid';
-import InputForm from './components/InputForm';
+import { InputForm } from './components/Form';
+import { TodoList } from './components/List';
 import './App.css';
-import TodoContainer from './components/TodoContainer';
 
 function App() {
 	const [tasks, setTasks] = useLocalStorage('todo-list-stored-tasks', []);
 
-	function handleItemSubmit(input) {
+	function handleItemSubmit(value) {
 		const task = {
 			key: uuidv4(),
-			text: input,
+			text: value,
 			completed: false,
-			order: tasks.length + 1,
+			order: tasks.length,
 		};
 		setTasks([...tasks, task]);
 	}
 
-	function handleItemDelete(e) {
-		const i = tasks.findIndex(({ key }) => key === e.currentTarget.value);
+	function handleItemDelete(value) {
+		const i = tasks.findIndex(task => task.key === value);
 		if (i < 0) return;
 		tasks.splice(i, 1);
 		setTasks([...tasks]);
 	}
 
-	function handleItemComplete(e) {
-		const completedTask = tasks.find(
-			({ key }) => key === e.currentTarget.value
-		);
+	function handleItemComplete(value) {
+		const completedTask = tasks.find(task => task.key === value);
 		if (!completedTask) return;
 		completedTask.completed = !completedTask.completed;
 		setTasks([...tasks]);
@@ -36,10 +34,10 @@ function App() {
 	return (
 		<div className="App">
 			<header className="page-header">
-				<h1>Todo List</h1>
+				<h1>To Do List</h1>
 			</header>
 			<InputForm onSubmit={handleItemSubmit} />
-			<TodoContainer
+			<TodoList
 				tasks={tasks}
 				onComplete={handleItemComplete}
 				onDelete={handleItemDelete}

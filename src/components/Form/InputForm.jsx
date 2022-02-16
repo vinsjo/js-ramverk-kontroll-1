@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from './Button';
+import { Button } from '../Buttons';
 import styles from './InputForm.module.css';
 
 function InputForm({ onSubmit }) {
@@ -24,7 +24,6 @@ function InputForm({ onSubmit }) {
 				value={input}
 				placeholder="Add task"
 				onChange={e => setInput(e.target.value)}
-				required={true}
 			/>
 			<Button type="submit" title="Add Task">
 				Submit Task
