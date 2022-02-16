@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/js-ramverk-kontroll-1/static/css/main.fb7bc522.css",
+    "main.js": "/js-ramverk-kontroll-1/static/js/main.a45cf41a.js",
+    "static/js/787.1c314e0d.chunk.js": "/js-ramverk-kontroll-1/static/js/787.1c314e0d.chunk.js",
+    "index.html": "/js-ramverk-kontroll-1/index.html",
+    "main.fb7bc522.css.map": "/js-ramverk-kontroll-1/static/css/main.fb7bc522.css.map",
+    "main.a45cf41a.js.map": "/js-ramverk-kontroll-1/static/js/main.a45cf41a.js.map",
+    "787.1c314e0d.chunk.js.map": "/js-ramverk-kontroll-1/static/js/787.1c314e0d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb7bc522.css",
+    "static/js/main.a45cf41a.js"
+  ]
+}
