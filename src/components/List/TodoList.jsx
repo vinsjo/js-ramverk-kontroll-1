@@ -8,7 +8,8 @@ function TodoList({ tasks, onComplete, onDelete }) {
 		<ul className={styles.list}>
 			{tasks
 				.sort((a, b) => a.order - b.order)
-				.map(({ key, text, completed }) => {
+				.map(task => {
+					const { key, text, completed } = task;
 					return (
 						<li
 							key={key}
@@ -19,7 +20,7 @@ function TodoList({ tasks, onComplete, onDelete }) {
 						>
 							<span className={styles['task-title']}>{text}</span>
 							<TodoButtons
-								id={key}
+								task={task}
 								onComplete={onComplete}
 								onDelete={onDelete}
 							/>

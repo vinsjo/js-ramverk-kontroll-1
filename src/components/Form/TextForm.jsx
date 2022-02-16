@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Button } from '../Buttons';
-import styles from './InputForm.module.css';
+import styles from './TextForm.module.css';
 
-function InputForm({ onSubmit }) {
+function TextForm({ onSubmit }) {
 	const [input, setInput] = useState('');
 
 	function handleSubmit(e) {
@@ -32,4 +32,4 @@ function InputForm({ onSubmit }) {
 	);
 }
 
-export default InputForm;
+export default TextForm;

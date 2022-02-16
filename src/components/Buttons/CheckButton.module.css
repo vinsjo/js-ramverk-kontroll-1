@@ -1,0 +1,14 @@
+.icon {
+	opacity: 0;
+	transition: opacity 0.15s ease;
+}
+
+.button.checked .icon {
+	opacity: 1;
+}
+
+@media (hover: hover) {
+	.button:hover .icon {
+		opacity: 1;
+	}
+}

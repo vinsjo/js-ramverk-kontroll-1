@@ -1,23 +1,29 @@
 import React from 'react';
 import { ImCheckmark, ImCross } from 'react-icons/im';
-import { IconButton } from '../Buttons';
+import { IconButton, CheckButton } from '../Buttons';
 import styles from './TodoButtons.module.css';
 
-function TodoButtons({ id, onDelete, onComplete }) {
+function TodoButtons({ task, onDelete, onComplete }) {
 	return (
 		<div className={styles.container}>
-			<IconButton
-				icon={ImCheckmark}
+			{/* <IconButton
 				className={styles.complete}
-				value={id}
+				value={task.key}
 				title="Complete Task"
 				onClick={onComplete}
 			>
 				<ImCheckmark />
-			</IconButton>
+			</IconButton> */}
+			<CheckButton
+				checked={task.completed}
+				className={styles.complete}
+				value={task.key}
+				title="Complete Task"
+				onClick={onComplete}
+			/>
 			<IconButton
 				className={styles.delete}
-				value={id}
+				value={task.key}
 				title="Remove Task"
 				onClick={onDelete}
 			>

@@ -21,12 +21,15 @@
 	width: 100%;
 	font-family: var(--mono-font);
 	font-size: 1.25rem;
-	padding: 0.5em 0;
+	line-height: 160%;
+	margin: 1rem auto;
+	padding: 0.5rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	text-transform: capitalize;
 	position: relative;
+	border-bottom: 1px solid var(--ui-border);
 }
 
 .list-item.completed {

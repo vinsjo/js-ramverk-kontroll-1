@@ -2,16 +2,16 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: none;
-	background: black;
+	border: 3px solid black;
+	background: transparent;
 	width: 2rem;
 	height: 2rem;
-	padding: 0.5rem;
+	padding: 5px;
 	border-radius: 50%;
 }
 
 .button svg {
-	fill: white;
+	fill: black;
 	height: 100%;
 	width: auto;
 }
