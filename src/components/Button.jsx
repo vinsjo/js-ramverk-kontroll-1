@@ -1,14 +1,28 @@
 import React from 'react';
+import { classNames } from '../utils';
+import { isFn } from 'x-is-type';
+import styles from './Button.module.css';
 
-function Button({ className, text, value, onClick, type = 'button' }) {
+function Button({
+	className,
+	children,
+	value,
+	title,
+	onClick,
+	type = 'button',
+}) {
 	return (
 		<button
-			className={className || ''}
+			className={classNames(
+				styles.button,
+				className ? className : styles.default
+			)}
 			type={type}
-			value={value || text}
-			onClick={e => typeof onClick === 'function' && onClick(e)}
+			value={value}
+			title={title || ''}
+			onClick={e => isFn(onClick) && onClick(e)}
 		>
-			{text}
+			{children}
 		</button>
 	);
 }

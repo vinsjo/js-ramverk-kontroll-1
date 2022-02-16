@@ -1,19 +1,18 @@
 :root {
 	--ui-bg: rgb(240, 240, 240);
 	--ui-border: rgb(130, 130, 130);
+	--ui-border-radius: 3px;
 	--ui-bg-active: white;
+	--ui-transition: background 0.1s ease, color 0.1s ease;
 
-	--color-complete: rgb(0, 130, 9);
-	--color-delete: rgb(240, 50, 25);
+	--container-bg: white;
+	--container-border-radius: 10px;
+	--container-padding: 1rem;
 }
 
 #root {
 	width: 100%;
 	min-height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 	gap: 2rem;
 	padding: 2rem;
 }
@@ -22,6 +21,7 @@
 	width: 100%;
 	max-width: 60ch;
 	min-height: 50vh;
+	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -31,119 +31,6 @@
 	text-align: center;
 }
 
-button,
-input {
-	font-size: 1.2rem;
-	border: 1px solid var(--ui-border);
-	border-radius: 3px;
-	padding: 0.5em 1em;
-	outline: none;
-	background: var(--ui-bg);
-	transition-property: background, color;
-	transition-duration: 0.1s;
-	transition-timing-function: ease;
-}
-
-input:focus {
-	background: var(--ui-bg-active);
-}
-
-button {
-	font-weight: 700;
-}
-
 button:not(:disabled) {
 	cursor: pointer;
-}
-
-.page-header,
-.todo-list,
-.input-form {
-	background: white;
-	border-radius: 10px;
-	width: 100%;
-}
-
-.input-form,
-.page-header {
-	padding: 1em;
-}
-
-.input-form input {
-	border-radius: 3px 0 0 3px;
-	border-right: none;
-}
-.input-form button {
-	border-radius: 0 3px 3px 0;
-}
-
-.todo-list {
-	width: 100%;
-	list-style: none;
-	font-weight: 700;
-}
-
-.task {
-	font-size: 1.25rem;
-	padding: 1em;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	text-transform: capitalize;
-}
-
-.task:nth-child(even) {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-.task.completed {
-	opacity: 0.25;
-}
-
-.task.completed .text {
-	text-decoration: 0.15em line-through;
-}
-
-.task.completed button.complete {
-	background: var(--color-complete);
-}
-
-.task .button-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5em;
-	position: relative;
-	z-index: 5;
-}
-
-button.delete,
-button.complete {
-	display: block;
-	border: none;
-	background: black;
-	color: white;
-	width: 2rem;
-	height: 2rem;
-	padding: 0;
-	border-radius: 50%;
-}
-
-@media (hover: hover) {
-	button:not(:disabled):hover {
-		color: var(--ui-border);
-		background: var(--ui-bg-active);
-	}
-
-	.task button.delete:hover,
-	.task button.complete:hover {
-		color: white;
-	}
-
-	.task button.complete:hover {
-		background: var(--color-complete);
-	}
-	.task button.delete:hover {
-		background: var(--color-delete);
-	}
 }

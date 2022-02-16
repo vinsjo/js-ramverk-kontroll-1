@@ -1,0 +1,20 @@
+.button {
+	border-style: solid;
+	border-radius: var(--ui-border-radius);
+	outline: none;
+	transition: var(--ui-transition);
+}
+
+.button.default {
+	border: 1px solid var(--ui-border);
+	font-size: 1.2rem;
+	padding: 0.5em 1em;
+	background: var(--ui-bg);
+}
+
+@media (hover: hover) {
+	.button.default:not(:disabled):hover {
+		color: var(--ui-border);
+		background: var(--ui-bg-active);
+	}
+}

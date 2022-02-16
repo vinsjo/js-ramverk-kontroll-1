@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
-import TextInput from './TextInput';
+import styles from './InputForm.module.css';
 
 function InputForm({ onSubmit }) {
 	const [input, setInput] = useState('');
@@ -13,9 +13,22 @@ function InputForm({ onSubmit }) {
 	}
 
 	return (
-		<form className="input-form" autoComplete="off" onSubmit={handleSubmit}>
-			<TextInput value={input} onChange={e => setInput(e.target.value)} />
-			<Button type="submit" text="Add" />
+		<form
+			className={styles.form}
+			autoComplete="off"
+			onSubmit={handleSubmit}
+		>
+			<input
+				className={styles.input}
+				type="text"
+				value={input}
+				placeholder="Add task"
+				onChange={e => setInput(e.target.value)}
+				required={true}
+			/>
+			<Button type="submit" title="Add Task">
+				Submit Task
+			</Button>
 		</form>
 	);
 }

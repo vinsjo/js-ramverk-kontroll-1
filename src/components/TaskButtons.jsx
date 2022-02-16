@@ -1,19 +1,25 @@
 import React from 'react';
-import DeleteButton from './DeleteButton';
-import CompleteButton from './CompleteButton';
+import Button from './Button';
+import styles from './TaskButtons.module.css';
 function TaskButtons({ task, onDelete, onComplete }) {
 	return (
-		<div className="button-container">
-			<CompleteButton
-				onClick={() =>
-					typeof onComplete === 'function' && onComplete(task.key)
-				}
-			/>
-			<DeleteButton
-				onClick={() =>
-					typeof onDelete === 'function' && onDelete(task.key)
-				}
-			/>
+		<div className={styles.container}>
+			<Button
+				className={styles.complete}
+				value={task.key}
+				title="Complete Task"
+				onClick={onComplete}
+			>
+				✓
+			</Button>
+			<Button
+				className={styles.delete}
+				value={task.key}
+				title="Delete Task"
+				onClick={onDelete}
+			>
+				✕
+			</Button>
 		</div>
 	);
 }

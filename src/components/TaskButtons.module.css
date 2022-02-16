@@ -1,0 +1,33 @@
+:root {
+	--color-complete: rgb(0, 130, 9);
+	--color-delete: rgb(240, 50, 25);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	position: relative;
+	z-index: 5;
+}
+
+.container button {
+	display: block;
+	border: none;
+	background: black;
+	color: white;
+	width: 2rem;
+	height: 2rem;
+	padding: 0;
+	border-radius: 50%;
+}
+
+@media (hover: hover) {
+	button.delete:hover {
+		background: var(--color-delete);
+	}
+	button.complete:hover {
+		background: var(--color-complete);
+	}
+}

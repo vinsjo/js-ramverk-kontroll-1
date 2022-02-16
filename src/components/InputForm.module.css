@@ -1,0 +1,25 @@
+.form {
+	width: 100%;
+	background: var(--container-bg);
+	border-radius: var(--container-border-radius);
+	padding: var(--container-padding);
+}
+
+.form button {
+	border-radius: 0 var(--ui-border-radius) var(--ui-border-radius) 0;
+}
+
+.input {
+	font-size: 1.2rem;
+	border: 1px solid var(--ui-border);
+	border-radius: var(--ui-border-radius) 0 0 var(--ui-border-radius);
+	border-right: none;
+	padding: 0.5em 1em;
+	outline: none;
+	background: var(--ui-bg);
+	transition: var(--ui-transition);
+}
+
+.input:focus {
+	background: var(--ui-bg-active);
+}
