@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from './hooks';
-import TextForm from './components/TextForm';
+import TaskForm from './components/TaskForm';
 import TodoList from './components/TodoList';
 import Header from './components/Header';
 import './App.css';
@@ -9,7 +9,8 @@ import './App.css';
 function App() {
 	const [tasks, setTasks] = useLocalStorage('todo-list-stored-tasks', []);
 
-	function handleItemSubmit(value) {
+	const handleItemSubmit = value => {
+		console.log(value);
 		if (!value || !value.trim().length) return;
 		setTasks([
 			...tasks,
@@ -19,26 +20,23 @@ function App() {
 				completed: false,
 			},
 		]);
-	}
+	};
 
-	function handleItemDelete(value) {
-		const i = tasks.findIndex(task => task.key === value);
-		if (i < 0) return;
-		tasks.splice(i, 1);
-		setTasks([...tasks]);
-	}
+	const handleItemDelete = key => {
+		setTasks(tasks.filter(task => task.key !== key));
+	};
 
-	function handleItemComplete(value) {
-		const completedTask = tasks.find(task => task.key === value);
+	const handleItemComplete = key => {
+		const completedTask = tasks.find(task => task.key === key);
 		if (!completedTask) return;
 		completedTask.completed = !completedTask.completed;
 		setTasks([...tasks]);
-	}
+	};
 
 	return (
 		<div className="App">
 			<Header title="Todo List" />
-			<TextForm onSubmit={handleItemSubmit} />
+			<TaskForm onSubmit={handleItemSubmit} />
 			<TodoList
 				tasks={tasks}
 				onComplete={handleItemComplete}

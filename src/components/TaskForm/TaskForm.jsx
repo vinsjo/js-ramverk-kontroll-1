@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import Button from '../Button';
-import styles from './TextForm.module.css';
+import styles from './TaskForm.module.css';
 
 function TextForm({ onSubmit }) {
 	const [input, setInput] = useState('');
 
-	function handleSubmit(e) {
+	const handleSubmit = e => {
 		e.preventDefault();
 		setInput('');
 		if (typeof onSubmit !== 'function') return;
 		onSubmit(input);
-	}
+	};
 
 	return (
 		<form
