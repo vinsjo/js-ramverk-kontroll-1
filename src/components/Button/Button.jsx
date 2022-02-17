@@ -20,7 +20,7 @@ function Button({
 			type={type}
 			value={value}
 			title={title || ''}
-			onClick={() => isFn(onClick) && onClick(value)}
+			onClick={e => isFn(onClick) && onClick(e)}
 		>
 			{children}
 		</button>

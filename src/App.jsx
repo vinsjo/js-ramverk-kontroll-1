@@ -9,7 +9,7 @@ import './App.css';
 function App() {
 	const [tasks, setTasks] = useLocalStorage('todo-list-stored-tasks', []);
 
-	const handleItemSubmit = value => {
+	const handleTaskSubmit = value => {
 		console.log(value);
 		if (!value || !value.trim().length) return;
 		setTasks([
@@ -22,25 +22,28 @@ function App() {
 		]);
 	};
 
-	const handleItemDelete = key => {
+	const handleTaskDelete = key => {
 		setTasks(tasks.filter(task => task.key !== key));
 	};
 
-	const handleItemComplete = key => {
-		const completedTask = tasks.find(task => task.key === key);
-		if (!completedTask) return;
-		completedTask.completed = !completedTask.completed;
-		setTasks([...tasks]);
+	const handleTaskComplete = key => {
+		setTasks(
+			tasks.map(task => {
+				return task.key === key
+					? { ...task, completed: !task.completed }
+					: task;
+			})
+		);
 	};
 
 	return (
 		<div className="App">
 			<Header title="Todo List" />
-			<TaskForm onSubmit={handleItemSubmit} />
+			<TaskForm onSubmit={handleTaskSubmit} />
 			<TodoList
 				tasks={tasks}
-				onComplete={handleItemComplete}
-				onDelete={handleItemDelete}
+				onComplete={handleTaskComplete}
+				onDelete={handleTaskDelete}
 			/>
 		</div>
 	);

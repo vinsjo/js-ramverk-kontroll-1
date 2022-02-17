@@ -2,7 +2,7 @@ import React from 'react';
 import { ImCheckmark, ImCross } from 'react-icons/im';
 import { classNames } from '../../utils';
 import Button from '../Button';
-import styles from './Buttons.module.css';
+import styles from './TodoButtons.module.css';
 
 function TodoButtons({ task, onDelete, onComplete }) {
 	return (

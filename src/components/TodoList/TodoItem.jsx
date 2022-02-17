@@ -1,9 +1,9 @@
 import React from 'react';
 import { classNames } from '../../utils';
-import Buttons from './Buttons';
-import styles from './ListItem.module.css';
+import TodoButtons from './TodoButtons';
+import styles from './TodoItem.module.css';
 
-function ListItem({ task, onComplete, onDelete }) {
+function TodoItem({ task, onComplete, onDelete }) {
 	return (
 		<li
 			className={classNames(
@@ -12,9 +12,13 @@ function ListItem({ task, onComplete, onDelete }) {
 			)}
 		>
 			<span className={styles.title}>{task.text}</span>
-			<Buttons task={task} onComplete={onComplete} onDelete={onDelete} />
+			<TodoButtons
+				task={task}
+				onComplete={onComplete}
+				onDelete={onDelete}
+			/>
 		</li>
 	);
 }
 
-export default ListItem;
+export default TodoItem;

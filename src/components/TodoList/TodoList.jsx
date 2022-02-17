@@ -1,16 +1,16 @@
 import React from 'react';
-import ListItem from './ListItem';
+import TodoItem from './TodoItem';
 import styles from './TodoList.module.css';
 
 function TodoList({ tasks, onComplete, onDelete }) {
 	return (
 		<ul className={styles.list}>
 			{tasks.map(task => (
-				<ListItem
+				<TodoItem
 					key={task.key}
 					task={task}
-					onComplete={onComplete}
-					onDelete={onDelete}
+					onComplete={() => onComplete(task.key)}
+					onDelete={() => onDelete(task.key)}
 				/>
 			))}
 		</ul>
