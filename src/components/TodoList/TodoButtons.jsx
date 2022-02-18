@@ -13,7 +13,7 @@ function TodoButtons({ task, onDelete, onComplete }) {
 					styles.complete,
 					task.completed ? styles.checked : null
 				)}
-				value={task.key}
+				value={task.id}
 				title="Complete Task"
 				onClick={onComplete}
 			>

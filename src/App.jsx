@@ -10,26 +10,25 @@ function App() {
 	const [tasks, setTasks] = useLocalStorage('todo-list-stored-tasks', []);
 
 	const handleTaskSubmit = value => {
-		console.log(value);
 		if (!value || !value.trim().length) return;
 		setTasks([
 			...tasks,
 			{
-				key: uuidv4(),
+				id: uuidv4(),
 				text: value,
 				completed: false,
 			},
 		]);
 	};
 
-	const handleTaskDelete = key => {
-		setTasks(tasks.filter(task => task.key !== key));
+	const handleTaskDelete = id => {
+		setTasks(tasks.filter(task => task.id !== id));
 	};
 
-	const handleTaskComplete = key => {
+	const handleTaskComplete = id => {
 		setTasks(
 			tasks.map(task => {
-				return task.key === key
+				return task.id === id
 					? { ...task, completed: !task.completed }
 					: task;
 			})
@@ -38,7 +37,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Header title="Todo List" />
+			<Header title="To-do List" />
 			<TaskForm onSubmit={handleTaskSubmit} />
 			<TodoList
 				tasks={tasks}

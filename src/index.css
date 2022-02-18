@@ -21,3 +21,9 @@ body {
 	font-family: var(--main-font);
 	background-color: rgb(230, 230, 230);
 }
+
+#root {
+	width: 100%;
+	min-height: 100%;
+	padding: 2rem 1rem;
+}

@@ -14,7 +14,7 @@
 }
 
 .task.completed {
-	opacity: 0.7;
+	opacity: 0.6;
 	text-decoration: 0.15em line-through;
 	text-decoration-skip-ink: none;
 }

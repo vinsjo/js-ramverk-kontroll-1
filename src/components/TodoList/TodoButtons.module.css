@@ -34,6 +34,14 @@
 	opacity: 0;
 }
 
+.complete.checked {
+	border-color: var(--color-complete);
+}
+
+.complete.checked .icon {
+	fill: var(--color-complete);
+}
+
 .button,
 .icon {
 	transition-property: opacity, border-color, fill;

@@ -7,10 +7,10 @@ function TodoList({ tasks, onComplete, onDelete }) {
 		<ul className={styles.list}>
 			{tasks.map(task => (
 				<TodoItem
-					key={task.key}
+					key={task.id}
 					task={task}
-					onComplete={() => onComplete(task.key)}
-					onDelete={() => onDelete(task.key)}
+					onComplete={() => onComplete(task.id)}
+					onDelete={() => onDelete(task.id)}
 				/>
 			))}
 		</ul>
