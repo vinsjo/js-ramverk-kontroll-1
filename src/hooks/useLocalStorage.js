@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react';
-import { isStr } from 'x-is-type';
 
 /**
  * @param {String} key
@@ -8,7 +7,10 @@ import { isStr } from 'x-is-type';
 function setStorageItem(key, value) {
 	try {
 		if (!key) throw new Error(`Invalid local storage key: ${key}`);
-		localStorage.setItem(key, isStr(value) ? value : JSON.stringify(value));
+		localStorage.setItem(
+			key,
+			typeof value === 'string' ? value : JSON.stringify(value)
+		);
 		return value;
 	} catch (e) {
 		console.error(e);
